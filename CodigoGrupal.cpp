@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string.h>
+#include <ctype.h> 
 #include "LecturaDeDatos.h"
 using namespace std;
 struct alumno {
@@ -29,7 +30,8 @@ int main() {
   do {
     menu();
     opcion = pedirop();
-
+    system("cls");
+    system("exit");
     switch (opcion) {
       case 1:{
         for (int i = 0; i < n; i++) {
@@ -81,6 +83,7 @@ void ingresar_alumno(alumno *&a, int i) {
   cout << "Ingrese la edad del alumno: ";
   cin >> a[i].edad;
   cout << "\n";
+  a[i].nombre[0] = toupper(a[i].nombre[0]);
 }
 
 void mostrar_alumno(alumno *&a, int i) {
